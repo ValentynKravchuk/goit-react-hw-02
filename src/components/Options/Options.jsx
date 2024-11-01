@@ -1,12 +1,12 @@
 import React from "react";
 
-function Options(value) {
+function Options({ update, total }) {
   return (
     <div>
-      <button>Good</button>
-      <button>Neutral</button>
-      <button>Bad</button>
-      <button>Reset</button>
+      <button onClick={() => update("good")}>Good</button>
+      <button onClick={() => update("neutral")}>Neutral</button>
+      <button onClick={() => update("bad")}>Bad</button>
+      {total > 0 && <button onClick={() => update("reset")}>Reset</button>}
     </div>
   );
 }
