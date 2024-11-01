@@ -1,4 +1,5 @@
 import React from "react";
+import s from "./Feedback.module.css";
 
 function Feedback({ value }) {
   const totalFeedback = value.good + value.neutral + value.bad;
@@ -10,11 +11,13 @@ function Feedback({ value }) {
     <div>
       <h2>Feedback Statistics</h2>
       <ul>
-        <li>Good: {value.good}</li>
-        <li>Neutral: {value.neutral}</li>
-        <li>Bad: {value.bad}</li>
-        <li>Total: {totalFeedback}</li>
-        <li>Positive Feedback: {positiveFeedbackPercentage}%</li>
+        <li className={s.item}>Good: {value.good}</li>
+        <li className={s.item}>Neutral: {value.neutral}</li>
+        <li className={s.item}>Bad: {value.bad}</li>
+        <li className={s.item}>Total: {totalFeedback}</li>
+        <li className={s.item}>
+          Positive Feedback: {positiveFeedbackPercentage}%
+        </li>
       </ul>
     </div>
   );
